@@ -3,7 +3,7 @@ PT,1,Pai,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminin
 PT,1,nosso,pronome possessivo,,NÃO,
 PT,1,que,pronome relativo,,NÃO,
 PT,1,estais,verbo (estar),,NÃO,
-PT,1,no,preposição + artigo definido,,NÃO,
+PT,1,no,preposição + artigo (em + o),,NÃO,
 PT,1,céu,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
 PT,1,",",pontuação,,NÃO,
 PT,1,santificado,adjetivo,,NÃO,adjetivo_normal
@@ -12,64 +12,76 @@ PT,1,o,artigo definido,,NÃO,
 PT,1,vosso,pronome possessivo,,NÃO,
 PT,1,nome,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
 PT,1,.,pontuação,,NÃO,
-PT,2,Venha,verbo,,NÃO,
+PT,2,Venha,verbo (imperativo),,NÃO,
 PT,2,a,preposição,,NÃO,preposicao
 PT,2,nós,pronome pessoal,,NÃO,
 PT,2,o,artigo definido,,NÃO,
 PT,2,vosso,pronome possessivo,,NÃO,
 PT,2,reino,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
-PT,2,.,pontuação,,NÃO,
-PT,3,Seja,verbo,,NÃO,
-PT,3,feita,adjetivo,,NÃO,adjetivo_normal
-PT,3,a,artigo,,NÃO,artigo_definido OU artigo_indefinido
-PT,3,vossa,pronome possessivo,,NÃO,
-PT,3,vontade,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
-PT,3,",",pontuação,,NÃO,
-PT,3,assim,advérbio,,NÃO,advérbio_normal
-PT,3,na,preposição artigo,,NÃO,
+PT,2,",",sinal de pontuação,,NÃO,
+PT,2,seja,verbo (subjuntivo),,NÃO,
+PT,2,feita,verbo (particípio),,NÃO,
+PT,2,a,preposição,,NÃO,preposicao
+PT,2,vossa,pronome possessivo,,NÃO,
+PT,2,vontade,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+PT,2,.,sinal de pontuação,,NÃO,
+PT,3,Assim,advérbio,,NÃO,advérbio_normal
+PT,3,na,preposição,,NÃO,preposicao
 PT,3,terra,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
 PT,3,como,conjunção,,NÃO,conjuncao
-PT,3,no,preposição artigo,,NÃO,
+PT,3,no,preposição,,NÃO,preposicao
 PT,3,céu,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
 PT,3,.,pontuação,,NÃO,
-PT,4,O,artigo definido masculino singular,,NÃO,
-PT,4,pão,substantivo masculino singular,,NÃO,
-PT,4,nosso,pronome possessivo masculino singular,,NÃO,
-PT,4,de,preposição,,NÃO,preposicao
-PT,4,cada,pronome indefinido invariável,,NÃO,
-PT,4,dia,substantivo masculino singular,,NÃO,
-PT,4,nos,pronome pessoal oblíquo átono 1ª pessoa do plural,,NÃO,
-PT,4,dai,verbo dar 2ª pessoa do plural do imperativo afirmativo,,NÃO,
-PT,4,hoje,advérbio de tempo,,NÃO,
-PT,5,Perdoai,verbo,,NÃO,
-PT,5,as,artigo definido feminino plural,,NÃO,
-PT,5,nossas,pronome possessivo feminino plural,,NÃO,
-PT,5,ofensas,substantivo feminino plural,,NÃO,
-PT,6,Assim,advérbio,,NÃO,advérbio_normal
-PT,6,como,conjunção subordinativa,,NÃO,
-PT,6,nós,pronome pessoal,,NÃO,
-PT,6,perdoamos,verbo,,NÃO,
-PT,6,a,preposição,,NÃO,preposicao
-PT,6,quem,pronome relativo,,NÃO,
-PT,6,nos,pronome pessoal,,NÃO,
-PT,6,tem,verbo,,NÃO,
-PT,6,ofendido,adjetivo,,NÃO,adjetivo_normal
-PT,7,E,conjunção coordenativa aditiva,,NÃO,
-PT,7,não,advérbio de negação,,NÃO,
-PT,7,nos,pronome oblíquo átono,,NÃO,
-PT,7,deixeis,"verbo (flexão de presente do subjuntivo, 2ª pessoa do plural)",,NÃO,
-PT,7,cair,verbo (infinitivo),,NÃO,
-PT,7,em,preposição,,NÃO,preposicao
-PT,7,tentação,substantivo feminino,,NÃO,
-PT,7,",",sinal de pontuação (vírgula),,NÃO,
-PT,7,mas,conjunção coordenativa adversativa,,NÃO,
-PT,7,livrai,"verbo (flexão de imperativo afirmativo, 2ª pessoa do plural)",,NÃO,
-PT,7,-,sinal de pontuação (hífen),,NÃO,
-PT,7,nos,pronome oblíquo átono,,NÃO,
-PT,7,do,preposição + artigo definido masculino singular (contração),,NÃO,
-PT,7,mal,substantivo masculino,,NÃO,
-PT,7,.,sinal de pontuação (ponto final),,NÃO,
+PT,3,O,artigo,,NÃO,artigo_definido OU artigo_indefinido
+PT,3,pão,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+PT,3,nosso,pronome possessivo,,NÃO,
+PT,3,de,preposição,,NÃO,preposicao
+PT,3,cada,adjetivo,,NÃO,adjetivo_normal
+PT,3,dia,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+PT,3,.,pontuação,,NÃO,
+PT,4,Nos,pronome,,NÃO,
+PT,4,dai,verbo,,NÃO,
+PT,4,hoje,advérbio,,NÃO,advérbio_normal
+PT,4,Perdoai,verbo,,NÃO,
+PT,4,as,artigo,,NÃO,artigo_definido OU artigo_indefinido
+PT,4,nossas,pronome,,NÃO,
+PT,4,ofensas,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+PT,4,",",pontuação,,NÃO,
+PT,4,assim,advérbio,,NÃO,advérbio_normal
+PT,4,como,conjunção,,NÃO,conjuncao
+PT,5,Nós,pronome pessoal,,NÃO,
+PT,5,perdoamos,verbo,,NÃO,
+PT,5,a,preposição,,NÃO,preposicao
+PT,5,quem,pronome relativo,,NÃO,
+PT,5,nos,pronome pessoal,,NÃO,
+PT,5,tem,verbo,,NÃO,
+PT,5,ofendido,adjetivo,,NÃO,adjetivo_normal
+PT,5,.,pontuação,,NÃO,
+PT,5,E,conjunção coordenativa,,NÃO,
+PT,5,não,advérbio,,NÃO,advérbio_normal
+PT,5,nos,pronome pessoal,,NÃO,
+PT,5,.,pontuação,,NÃO,
+PT,6,Deixeis,verbo,,NÃO,
+PT,6,cair,verbo,,NÃO,
+PT,6,em,preposição,,NÃO,preposicao
+PT,6,tentação,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+PT,6,",",pontuação,,NÃO,
+PT,6,mas,conjunção,,NÃO,conjuncao
+PT,6,livrai,verbo,,NÃO,
+PT,6,-,pontuação,,NÃO,
+PT,6,nos,pronome,,NÃO,
+PT,6,do,preposição + artigo,,NÃO,
+PT,6,mal,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+PT,6,.,pontuação,,NÃO,
+PT,7,Mas,advérbio,,NÃO,advérbio_normal
+PT,7,livrai,verbo,,NÃO,
+PT,7,-,símbolo,,NÃO,
+PT,7,nos,pronome,,NÃO,
+PT,7,do,preposição,,NÃO,preposicao
+PT,7,mal,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+PT,7,.,pontuação,,NÃO,
 PT,7,Amém,interjeição,,NÃO,
+PT,7,.,pontuação,,NÃO,
 EN,1,Our,determiner,,NÃO,artigo_definido
 EN,1,Father,noun,,NÃO,substantivo_masculino_singular
 EN,1,who,pronoun,,NÃO,pronome_pessoal
@@ -85,17 +97,18 @@ EN,1,.,punctuation,,NÃO,
 EN,2,Thy,determiner,,NÃO,artigo_definido
 EN,2,kingdom,noun,,NÃO,substantivo_masculino_singular
 EN,2,come,verb,,NÃO,verbo_presente
-EN,3,Thy,determiner (possessive),,NÃO,
-EN,3,will,noun,,NÃO,substantivo_masculino_singular
-EN,3,be,verb (auxiliary),,NÃO,
-EN,3,done,verb (past participle),,NÃO,
-EN,3,on,preposition,,NÃO,preposicao
-EN,3,earth,noun,,NÃO,substantivo_masculino_singular
-EN,3,as,conjunction,,NÃO,conjuncao
-EN,3,it,pronoun (personal),,NÃO,
-EN,3,is,verb (auxiliary),,NÃO,
-EN,3,in,preposition,,NÃO,preposicao
-EN,3,heaven,noun,,NÃO,substantivo_masculino_singular
+EN,2,thy,determiner,,NÃO,artigo_definido
+EN,2,will,modal_verb,,NÃO,verbo_modal
+EN,2,be,verb,,NÃO,verbo_presente
+EN,2,done,verb,,NÃO,verbo_presente
+EN,3,On,preposição,,NÃO,preposicao
+EN,3,earth,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+EN,3,as,advérbio,,NÃO,advérbio_normal
+EN,3,it,pronome,,NÃO,
+EN,3,is,verbo,,NÃO,
+EN,3,in,preposição,,NÃO,preposicao
+EN,3,heaven,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+EN,3,.,pontuação,,NÃO,
 EN,4,Give,verbo (imperativo),,NÃO,
 EN,4,us,pronome (objeto),,NÃO,
 EN,4,this,determinante demonstrativo,,NÃO,
@@ -107,138 +120,160 @@ EN,5,Forgive,verbo,,NÃO,
 EN,5,us,pronome,,NÃO,
 EN,5,our,determinante possessivo,,NÃO,
 EN,5,trespasses,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
-EN,6,As,advérbio,,NÃO,advérbio_normal
-EN,6,we,pronome,,NÃO,
-EN,6,forgive,verbo,,NÃO,
-EN,6,those,pronome,,NÃO,
-EN,6,who,pronome,,NÃO,
-EN,6,trespass,verbo,,NÃO,
-EN,6,against,preposição,,NÃO,preposicao
-EN,6,us,pronome,,NÃO,
-EN,6,.,pontuação,,NÃO,
-EN,7,And,conjunção coordenativa,,NÃO,
-EN,7,lead,verbo (imperativo),,NÃO,
-EN,7,us,pronome pessoal (objeto),,NÃO,
-EN,7,not,advérbio de negação,,NÃO,
-EN,7,into,preposição,,NÃO,preposicao
-EN,7,temptation,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
-EN,7,",",vírgula,,NÃO,
-EN,7,but,conjunção coordenativa,,NÃO,
-EN,7,deliver,verbo (imperativo),,NÃO,
-EN,7,us,pronome pessoal (objeto),,NÃO,
+EN,5,",",pontuação,,NÃO,
+EN,5,as,conjunção subordinativa,,NÃO,
+EN,5,we,pronome,,NÃO,
+EN,5,forgive,verbo,,NÃO,
+EN,5,those,pronome,,NÃO,
+EN,5,who,pronome relativo,,NÃO,
+EN,5,trespass,verbo,,NÃO,
+EN,5,against,preposição,,NÃO,preposicao
+EN,5,us,pronome,,NÃO,
+EN,5,.,pontuação,,NÃO,
+EN,6,And,conjunção coordenativa,,NÃO,
+EN,6,lead,verbo (imperativo),,NÃO,
+EN,6,us,pronome pessoal (objeto),,NÃO,
+EN,6,not,advérbio de negação,,NÃO,
+EN,6,into,preposição,,NÃO,preposicao
+EN,6,temptation,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+EN,6,",",pontuação,,NÃO,
+EN,6,but,conjunção coordenativa,,NÃO,
+EN,6,deliver,verbo (imperativo),,NÃO,
+EN,6,us,pronome pessoal (objeto),,NÃO,
+EN,6,from,preposição,,NÃO,preposicao
+EN,6,evil,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+EN,7,Deliver,verbo,,NÃO,
+EN,7,us,pronome,,NÃO,
 EN,7,from,preposição,,NÃO,preposicao
 EN,7,evil,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
-EN,7,.,ponto final,,NÃO,
 EN,7,Amen,interjeição,,NÃO,
 ES,1,Padre,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
 ES,1,nuestro,pronome possessivo,,NÃO,
 ES,1,que,pronome relativo,,NÃO,
-ES,1,estás,"verbo (estar, 2ª pessoa do singular do presente do indicativo)",,NÃO,
+ES,1,estás,"verbo (estar, presente do indicativo, 2ª pessoa do singular)",,NÃO,
 ES,1,en,preposição,,NÃO,preposicao
 ES,1,los,artigo definido (masculino plural),,NÃO,
-ES,1,cielos,substantivo (masculino plural),,NÃO,
+ES,1,cielos,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
 ES,1,",",pontuação,,NÃO,
 ES,1,santificado,adjetivo (particípio passado),,NÃO,
-ES,1,sea,"verbo (ser, 3ª pessoa do singular do presente do subjuntivo)",,NÃO,
+ES,1,sea,"verbo (ser, presente do subjuntivo, 3ª pessoa do singular)",,NÃO,
 ES,1,tu,pronome possessivo,,NÃO,
-ES,1,nombre,substantivo (masculino singular),,NÃO,
+ES,1,nombre,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
 ES,1,.,pontuação,,NÃO,
-ES,2,Venha,"verbo (imperativo, 2ª pessoa do singular)",,NÃO,
-ES,2,a,preposição,,NÃO,preposicao
-ES,2,nosotros,pronome pessoal (1ª pessoa do plural),,NÃO,
-ES,2,tu,pronome pessoal (2ª pessoa do singular),,NÃO,
+ES,2,Ven,"verbo (imperativo, segunda pessoa do singular)",,NÃO,
+ES,2,sea,"verbo (subjuntivo, terceira pessoa do singular)",,NÃO,
+ES,2,tu,pronome possessivo (segunda pessoa do singular),,NÃO,
 ES,2,reino,"substantivo (masculino, singular)",,NÃO,
-ES,3,Hágase,verbo,,NÃO,
-ES,3,tu,pronome possessivo,,NÃO,
-ES,3,voluntad,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
-ES,3,",",pontuação,,NÃO,
-ES,3,así,advérbio,,NÃO,advérbio_normal
+ES,2,",",sinal de pontuação (vírgula),,NÃO,
+ES,2,hágase,"verbo (imperativo, terceira pessoa do singular, forma pronominal)",,NÃO,
+ES,2,tu,pronome possessivo (segunda pessoa do singular),,NÃO,
+ES,2,voluntad,"substantivo (feminino, singular)",,NÃO,
+ES,2,.,sinal de pontuação (ponto final),,NÃO,
+ES,3,Así,advérbio,,NÃO,advérbio_normal
 ES,3,en,preposição,,NÃO,preposicao
-ES,3,la,artigo definido,,NÃO,
-ES,3,tierra,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+ES,3,la,artigo definido feminino singular,,NÃO,
+ES,3,tierra,substantivo feminino singular,,NÃO,
 ES,3,como,conjunção,,NÃO,conjuncao
 ES,3,en,preposição,,NÃO,preposicao
-ES,3,el,artigo definido,,NÃO,
-ES,3,cielo,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+ES,3,el,artigo definido masculino singular,,NÃO,
+ES,3,cielo,substantivo masculino singular,,NÃO,
 ES,3,.,pontuação,,NÃO,
 ES,4,Nuestro,determinante posesivo,,NÃO,
 ES,4,pan,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
 ES,4,de,preposição,,NÃO,preposicao
 ES,4,cada,determinante indefinido,,NÃO,
 ES,4,día,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
-ES,4,dánoslo,verbo (imperativo) + pronome oblíquo,,NÃO,
+ES,4,dánoslo,verbo (imperativo) + pronome clítico,,NÃO,
 ES,4,hoy,advérbio,,NÃO,advérbio_normal
 ES,5,Perdona,verbo,,NÃO,
 ES,5,nuestras,determinante,,NÃO,artigo_definido
 ES,5,ofensas,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
-ES,6,Así,advérbio,,NÃO,advérbio_normal
-ES,6,como,advérbio,,NÃO,advérbio_normal
-ES,6,perdonamos,verbo,,NÃO,
-ES,6,a,preposição,,NÃO,preposicao
-ES,6,quienes,pronome relativo,,NÃO,
+ES,5,",",pontuação,,NÃO,
+ES,5,así,advérbio,,NÃO,advérbio_normal
+ES,5,como,conjunção,,NÃO,conjuncao
+ES,6,No,advérbio,,NÃO,advérbio_normal
 ES,6,nos,pronome pessoal,,NÃO,
-ES,6,han,verbo auxiliar,,NÃO,
-ES,6,ofendido,adjetivo,,NÃO,adjetivo_normal
-ES,6,.,pontuação,,NÃO,
-ES,7,Y,conjunción,,NÃO,
-ES,7,no,adverbio,,NÃO,
-ES,7,nos,pronombre,,NÃO,
-ES,7,dejes,verbo,,NÃO,
-ES,7,caer,verbo,,NÃO,
-ES,7,en,preposición,,NÃO,
-ES,7,tentación,sustantivo,,NÃO,
-ES,7,sino,conjunción,,NÃO,
-ES,7,líbranos,verbo,,NÃO,
-ES,7,del,preposición,,NÃO,
-ES,7,mal,sustantivo,,NÃO,
-ES,7,Amén,interjección,,NÃO,
-FR,1,Notre,adjectif possessif,,NÃO,
-FR,1,Père,nom,,NÃO,
-FR,1,qui,pronom relatif,,NÃO,
-FR,1,es,verbe,,NÃO,
-FR,1,aux,préposition,,NÃO,
-FR,1,cieux,nom,,NÃO,
-FR,1,Que,conjonction subordonnée,,NÃO,
-FR,1,ton,adjectif possessif,,NÃO,
-FR,1,nom,nom,,NÃO,
-FR,1,soit,verbe,,NÃO,
-FR,1,sanctifié,verbe,,NÃO,
+ES,6,dejes,verbo,,NÃO,
+ES,6,caer,verbo,,NÃO,
+ES,6,en,preposição,,NÃO,preposicao
+ES,6,tentación,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+ES,6,",",pontuação,,NÃO,
+ES,6,sino,conjunção,,NÃO,conjuncao
+ES,7,Y,conjuncao,#8B4513,SIM,
+ES,7,no,pronome_pessoal,#008080,SIM,
+ES,7,nos,pronome_pessoal,#008080,SIM,
+ES,7,dejes,verbo_imperativo,#E67E22,SIM,
+ES,7,caer,verbo_presente,#9B59B6,SIM,
+ES,7,en,preposicao,#FF8C00,SIM,
+ES,7,tentación,substantivo_feminino_singular,#FF1493,SIM,
+ES,7,sino,conjuncao,#8B4513,SIM,
+ES,7,líbranos,verbo_imperativo,#E67E22,SIM,
+ES,7,del,preposicao,#FF8C00,SIM,
+ES,7,mal,substantivo_masculino_singular,#4169E1,SIM,
+ES,7,Amén,interjeicao,#FF69B4,SIM,
+FR,1,Notre,pronome_possessivo_singular,#006400,SIM,
+FR,1,Père,substantivo_masculino_singular,#4169E1,SIM,
+FR,1,qui,pronome_relativo,#FFD700,SIM,
+FR,1,es,verbo_presente,#9B59B6,SIM,
+FR,1,aux,preposicao,#FF8C00,SIM,
+FR,1,cieux,substantivo_masculino_plural,#1E3A8A,SIM,
+FR,1,que,pronome_relativo,#FFD700,SIM,
+FR,1,ton,pronome_possessivo_singular,#006400,SIM,
+FR,1,nom,substantivo_masculino_singular,#4169E1,SIM,
+FR,1,soit,verbo_imperativo,#E67E22,SIM,
+FR,1,sanctifié,verbo_presente,#9B59B6,SIM,
 FR,2,Viens,verbo,,NÃO,
-FR,2,à,preposição,,NÃO,preposicao
-FR,2,nous,pronome,,NÃO,
+FR,2,Que,conjunção,,NÃO,conjuncao
 FR,2,ton,determinante possessivo,,NÃO,
 FR,2,royaume,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
-FR,2,.,pontuação,,NÃO,
-FR,5,Pardonnez,verbo,,NÃO,
-FR,5,-,hífen,,NÃO,
-FR,5,nous,pronome,,NÃO,
-FR,5,nos,pronome,,NÃO,
-FR,5,offenses,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+FR,2,soit,verbo,,NÃO,
+FR,2,fait,adjetivo ou particípio passado,,NÃO,
+FR,2,Que,conjunção,,NÃO,conjuncao
+FR,2,ta,determinante possessivo,,NÃO,
+FR,2,volonté,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+FR,2,soit,verbo,,NÃO,
+FR,3,Faite,verbo,,NÃO,
+FR,3,sur,preposição,,NÃO,preposicao
+FR,3,la,artigo definido,,NÃO,
+FR,3,terre,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+FR,3,comme,advérbio,,NÃO,advérbio_normal
+FR,3,au,artigo definido contraído,,NÃO,
+FR,3,ciel,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+FR,3,ciel,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+FR,3,Notre,pronome possessivo,,NÃO,
+FR,3,pain,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+FR,4,Donnez,verbo_imperativo,#E67E22,SIM,
+FR,4,nous,pronome_pessoal,#008080,SIM,
+FR,4,notre,pronome_possessivo_singular,#006400,SIM,
+FR,4,pain,substantivo_masculino_singular,#4169E1,SIM,
+FR,4,de,preposicao,#FF8C00,SIM,
+FR,4,chaque,adjetivo_normal,#E74C3C,SIM,
+FR,4,jour,substantivo_masculino_singular,#4169E1,SIM,
+FR,5,Tout,advérbio,,NÃO,advérbio_normal
+FR,5,comme,advérbio,,NÃO,advérbio_normal
+FR,5,nous,pronome pessoal,,NÃO,
+FR,5,pardonnons,verbo,,NÃO,
+FR,5,à,preposição,,NÃO,preposicao
+FR,5,ceux,pronome demonstrativo,,NÃO,
+FR,5,qui,pronome relativo,,NÃO,
+FR,5,nous,pronome pessoal,,NÃO,
+FR,5,ont,verbo auxiliar,,NÃO,
+FR,5,fait,verbo,,NÃO,
 FR,5,.,pontuação,,NÃO,
-FR,6,Comme,adv,,NÃO,
-FR,6,nous,pron,,NÃO,
-FR,6,pardonnons,v,,NÃO,
-FR,6,à,prep,,NÃO,
-FR,6,ceux,pron,,NÃO,
-FR,6,qui,pron,,NÃO,
-FR,6,nous,pron,,NÃO,
-FR,6,ont,v,,NÃO,
-FR,6,offensés,adj,,NÃO,
-FR,6,.,ponct,,NÃO,
-FR,7,Et,conjunção coordenativa,,NÃO,
-FR,7,ne,advérbio de negação,,NÃO,
-FR,7,nous,pronome pessoal,,NÃO,
-FR,7,laissez,"verbo (imperativo, 2ª pessoa do plural)",,NÃO,
-FR,7,pas,advérbio de negação,,NÃO,
-FR,7,entrer,verbo no infinitivo,,NÃO,
-FR,7,en,preposição,,NÃO,preposicao
-FR,7,tentation,substantivo feminino,,NÃO,
-FR,7,",",vírgula,,NÃO,
-FR,7,mais,conjunção coordenativa adversativa,,NÃO,
-FR,7,délivrez,"verbo (imperativo, 2ª pessoa do plural)",,NÃO,
-FR,7,-,hífen,,NÃO,
-FR,7,nous,pronome pessoal,,NÃO,
-FR,7,du,artigo definido contracto (de + le),,NÃO,
-FR,7,mal,substantivo masculino,,NÃO,
-FR,7,.,ponto final,,NÃO,
+FR,6,Du,artigo_contrato (de + le),,NÃO,
+FR,6,tort,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+FR,6,offensé,adjetivo,,NÃO,adjetivo_normal
+FR,6,Et,conjunção,,NÃO,conjuncao
+FR,6,ne,advérbio_negativo,,NÃO,
+FR,6,nous,pronome_pessoal,#008080,SIM,
+FR,6,soumets,"verbo (presente do indicativo, 2ª pessoa do singular)",,NÃO,
+FR,6,pas,advérbio_negativo,,NÃO,
+FR,6,à,preposição,,NÃO,preposicao
+FR,6,la,artigo_definido,#D3D3D3,SIM,
+FR,6,tentation,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
+FR,7,Mais,advérbio,,NÃO,advérbio_normal
+FR,7,délivre,verbo,,NÃO,
+FR,7,nous,pronome,,NÃO,
+FR,7,du,artigo definido (contraído com preposição),,NÃO,
+FR,7,mal,substantivo,,NÃO,substantivo_masculino_singular OU substantivo_feminino_singular
 FR,7,Amen,interjeição,,NÃO,

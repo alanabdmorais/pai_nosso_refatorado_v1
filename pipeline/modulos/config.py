@@ -53,7 +53,8 @@ class PipelineConfig:
     VOZ_EDGE: str = "pt-BR-AntonioNeural"
     IDIOMAS: list[str] = field(default_factory=lambda: IDIOMAS.copy())
 
-    # ── IDs do Google Drive (pastas existentes) ───────────────────────────────
+    # ── IDs do Google Drive (LEGADO — mantidos para compatibilidade, não usados
+    #    mais nas operações de upload/download; ver pasta_assets_* em vez disso) ──
     ID_PLANILHA_DRIVE:      str = "1bF7hnGSY7AALm4ZAS5owWNpiSTdgArW4ahAuVZaHPL0"
     ID_PASTA_AUDIO:         str = "1ZkEf6L6ZU0slgb-3QIhszWgu5A15v3rp"
     ID_PASTA_LEGENDAS:      str = "1X3aYPgrGvmUa_o57wksJs9AqkigZ7RNe"
@@ -135,6 +136,51 @@ class PipelineConfig:
     # ── Pastas do Drive (caminhos de path, não IDs — para acesso direto) ─────
 
     @property
+    def pasta_base_drive(self) -> Path:
+        """Pasta raiz do projeto no Drive montado."""
+        return Path("/content/drive/MyDrive/pai_nosso_refatorado_v1")
+
+    @property
+    def pasta_assets(self) -> Path:
+        """Pasta de assets (recursos estáticos) do projeto."""
+        return self.pasta_base_drive / "assets"
+
+    @property
+    def pasta_assets_audio(self) -> Path:
+        """Onde os arquivos .wav gerados pelo Edge TTS são salvos."""
+        return self.pasta_assets / "audio"
+
+    @property
+    def pasta_assets_legendas(self) -> Path:
+        """Onde os arquivos .srt de todos os idiomas são salvos."""
+        return self.pasta_assets / "legendas"
+
+    @property
+    def pasta_assets_videos(self) -> Path:
+        """Onde os vídeos gerados (base e final) são salvos."""
+        return self.pasta_assets / "videos"
+
+    @property
+    def pasta_assets_clipes(self) -> Path:
+        """Onde os clipes baixados do Pixabay são salvos."""
+        return self.pasta_assets / "clipes"
+
+    @property
+    def pasta_assets_cache(self) -> Path:
+        """Onde os caches de classificação são salvos."""
+        return self.pasta_assets / "cache"
+
+    @property
+    def pasta_assets_marca(self) -> Path:
+        """Onde os recursos de marca (logo, etc.) ficam salvos."""
+        return self.pasta_assets / "marca"
+
+    @property
+    def pasta_assets_trilha(self) -> Path:
+        """Onde a trilha sonora de fundo fica salva."""
+        return self.pasta_assets / "trilha"
+
+    @property
     def pasta_drive_correcoes(self) -> Path:
         """Onde o usuário coloca os JSONs revisados pela IA."""
         return Path(f"/content/drive/MyDrive/pai_nosso_refatorado_v1/pipeline/correcoes/{self.NOME_ORACAO}")
@@ -152,10 +198,8 @@ class PipelineConfig:
             erros.append("NOME_ORACAO não pode ser vazio")
         if not self.TEXTO_ORACAO:
             erros.append("TEXTO_ORACAO não pode ser vazio")
-        for id_attr in ["ID_PLANILHA_DRIVE", "ID_PASTA_AUDIO", "ID_PASTA_LEGENDAS",
-                        "ID_PASTA_CLASSIFICACAO", "ID_PASTA_VIDEOS"]:
-            if not getattr(self, id_attr):
-                erros.append(f"{id_attr} não configurado")
+        if not self.ID_PLANILHA_DRIVE:
+            erros.append("ID_PLANILHA_DRIVE não configurado")
         if erros:
             raise ValueError("PipelineConfig inválido:\n" + "\n".join(f"  - {e}" for e in erros))
         logger.info("PipelineConfig OK: '%s'", self.NOME_ORACAO)
@@ -170,6 +214,7 @@ class PipelineConfig:
             f"Voz Edge TTS:  {self.VOZ_EDGE}",
             f"Modelo Groq:   {self.GROQ_MODEL}",
             f"Duração clipe: {self.DURACAO_CLIPE}s",
+            f"Assets:        {self.pasta_assets}",
             f"Correcoes:     {self.pasta_drive_correcoes}",
             f"Brutos:        {self.pasta_drive_brutos}",
             f"Modo simples:  {'SIM (sem morfologia)' if self.VIDEO_SIMPLES_SEM_MORFOLOGIA else 'NÃO (completo)'}",

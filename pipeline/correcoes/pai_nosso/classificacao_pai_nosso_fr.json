@@ -1,126 +1,307 @@
-// classificacao_pai_nosso_fr.json (CORRIGIDO)
 {
   "1": {
     "inicio": "00:00:00,000",
     "fim": "00:00:05,539",
     "texto_original": "Notre Père qui es aux cieux, Que ton nom soit sanctifié.",
     "palavras": [
-      {"texto": "Notre", "classe": "pronome_possessivo_singular"},
-      {"texto": "Père", "classe": "substantivo_masculino_singular"},
-      {"texto": "qui", "classe": "pronome_relativo"},
-      {"texto": "es", "classe": "verbo_presente"},
-      {"texto": "aux", "classe": "preposicao"},
-      {"texto": "cieux", "classe": "substantivo_masculino_plural"},
-      {"texto": ",", "classe": "pontuacao"},
-      {"texto": "Que", "classe": "pronome_relativo"},
-      {"texto": "ton", "classe": "pronome_possessivo_singular"},
-      {"texto": "nom", "classe": "substantivo_masculino_singular"},
-      {"texto": "soit", "classe": "verbo_subjuntivo"},
-      {"texto": "sanctifié", "classe": "adjetivo_normal"},
-      {"texto": ".", "classe": "pontuacao"}
+      {
+        "texto": "Notre",
+        "classe": "pronome_possessivo_singular"
+      },
+      {
+        "texto": "Père",
+        "classe": "substantivo_masculino_singular"
+      },
+      {
+        "texto": "qui",
+        "classe": "pronome_relativo"
+      },
+      {
+        "texto": "es",
+        "classe": "verbo_presente"
+      },
+      {
+        "texto": "aux",
+        "classe": "preposicao"
+      },
+      {
+        "texto": "cieux",
+        "classe": "substantivo_masculino_plural"
+      },
+      {
+        "texto": "Que",
+        "classe": "pronome_relativo"
+      },
+      {
+        "texto": "ton",
+        "classe": "pronome_possessivo_singular"
+      },
+      {
+        "texto": "nom",
+        "classe": "substantivo_masculino_singular"
+      },
+      {
+        "texto": "soit",
+        "classe": "verbo_subjuntivo"
+      },
+      {
+        "texto": "sanctifié",
+        "classe": "verbo_passado"
+      }
     ]
   },
   "2": {
     "inicio": "00:00:05,540",
     "fim": "00:00:07,799",
-    "texto_original": "Viens à nous ton royaume.",
+    "texto_original": "Viens Que ton royaume soit fait Que ta volonté soit.",
     "palavras": [
-      {"texto": "Viens", "classe": "verbo_imperativo"},
-      {"texto": "à", "classe": "preposicao"},
-      {"texto": "nous", "classe": "pronome_pessoal"},
-      {"texto": "ton", "classe": "pronome_possessivo_singular"},
-      {"texto": "royaume", "classe": "substantivo_masculino_singular"},
-      {"texto": ".", "classe": "pontuacao"}
+      {
+        "texto": "Viens",
+        "classe": "verbo_imperativo"
+      },
+      {
+        "texto": "Que",
+        "classe": "pronome_relativo"
+      },
+      {
+        "texto": "ton",
+        "classe": "pronome_possessivo_singular"
+      },
+      {
+        "texto": "royaume",
+        "classe": "substantivo_masculino_singular"
+      },
+      {
+        "texto": "soit",
+        "classe": "verbo_subjuntivo"
+      },
+      {
+        "texto": "fait",
+        "classe": "verbo_passado"
+      },
+      {
+        "texto": "Que",
+        "classe": "pronome_relativo"
+      },
+      {
+        "texto": "ta",
+        "classe": "pronome_possessivo_singular"
+      },
+      {
+        "texto": "volonté",
+        "classe": "substantivo_feminino_singular"
+      },
+      {
+        "texto": "soit",
+        "classe": "verbo_subjuntivo"
+      }
     ]
   },
   "3": {
     "inicio": "00:00:07,800",
     "fim": "00:00:12,939",
-    "texto_original": "Que ta volonté soit faite sur la terre comme au ciel.",
+    "texto_original": "Faite sur la terre comme au ciel. ciel. Notre pain.",
     "palavras": [
-      {"texto": "Que", "classe": "pronome_relativo"},
-      {"texto": "ta", "classe": "pronome_possessivo_singular"},
-      {"texto": "volonté", "classe": "substantivo_feminino_singular"},
-      {"texto": "soit", "classe": "verbo_subjuntivo"},
-      {"texto": "faite", "classe": "adjetivo_normal"},
-      {"texto": "sur", "classe": "preposicao"},
-      {"texto": "la", "classe": "artigo_definido"},
-      {"texto": "terre", "classe": "substantivo_feminino_singular"},
-      {"texto": "comme", "classe": "conjuncao"},
-      {"texto": "au", "classe": "artigo_definido"},
-      {"texto": "ciel", "classe": "substantivo_masculino_singular"},
-      {"texto": ".", "classe": "pontuacao"}
+      {
+        "texto": "Faite",
+        "classe": "verbo_passado"
+      },
+      {
+        "texto": "sur",
+        "classe": "preposicao"
+      },
+      {
+        "texto": "la",
+        "classe": "artigo_definido"
+      },
+      {
+        "texto": "terre",
+        "classe": "substantivo_feminino_singular"
+      },
+      {
+        "texto": "comme",
+        "classe": "conjuncao"
+      },
+      {
+        "texto": "au",
+        "classe": "preposicao"
+      },
+      {
+        "texto": "ciel",
+        "classe": "substantivo_masculino_singular"
+      },
+      {
+        "texto": "ciel",
+        "classe": "substantivo_masculino_singular"
+      },
+      {
+        "texto": "Notre",
+        "classe": "pronome_possessivo_singular"
+      },
+      {
+        "texto": "pain",
+        "classe": "substantivo_masculino_singular"
+      }
     ]
   },
   "4": {
     "inicio": "00:00:12,940",
     "fim": "00:00:15,979",
-    "texto_original": "Donnez-nous aujourd'hui notre pain de chaque jour.",
+    "texto_original": "Quotidien Donnez aujourd'hui. Pardonnez-nous infractions.",
     "palavras": [
-      {"texto": "Donnez", "classe": "verbo_imperativo"},
-      {"texto": "-", "classe": "pontuacao"},
-      {"texto": "nous", "classe": "pronome_pessoal"},
-      {"texto": "aujourd'hui", "classe": "advérbio_normal"},
-      {"texto": "notre", "classe": "pronome_possessivo_singular"},
-      {"texto": "pain", "classe": "substantivo_masculino_singular"},
-      {"texto": "de", "classe": "preposicao"},
-      {"texto": "chaque", "classe": "adjetivo_normal"},
-      {"texto": "jour", "classe": "substantivo_masculino_singular"},
-      {"texto": ".", "classe": "pontuacao"}
+      {
+        "texto": "Quotidien",
+        "classe": "adjetivo_normal"
+      },
+      {
+        "texto": "Donnez",
+        "classe": "verbo_imperativo"
+      },
+      {
+        "texto": "aujourd'hui",
+        "classe": "advérbio_normal"
+      },
+      {
+        "texto": "Pardonnez",
+        "classe": "verbo_imperativo"
+      },
+      {
+        "texto": "nous",
+        "classe": "pronome_objeto"
+      },
+      {
+        "texto": "infractions",
+        "classe": "substantivo_feminino_plural"
+      }
     ]
   },
   "5": {
     "inicio": "00:00:15,980",
     "fim": "00:00:18,599",
-    "texto_original": "Pardonnez-nous nos offenses.",
+    "texto_original": "Tout comme nous pardonnons à ceux qui nous ont fait.",
     "palavras": [
-      {"texto": "Pardonnez", "classe": "verbo_imperativo"},
-      {"texto": "-", "classe": "pontuacao"},
-      {"texto": "nous", "classe": "pronome_pessoal"},
-      {"texto": "nos", "classe": "pronome_pessoal"},
-      {"texto": "offenses", "classe": "substantivo_feminino_plural"},
-      {"texto": ".", "classe": "pontuacao"}
+      {
+        "texto": "Tout",
+        "classe": "advérbio_normal"
+      },
+      {
+        "texto": "comme",
+        "classe": "conjuncao"
+      },
+      {
+        "texto": "nous",
+        "classe": "pronome_pessoal"
+      },
+      {
+        "texto": "pardonnons",
+        "classe": "verbo_presente"
+      },
+      {
+        "texto": "à",
+        "classe": "preposicao"
+      },
+      {
+        "texto": "ceux",
+        "classe": "pronome_demonstrativo"
+      },
+      {
+        "texto": "qui",
+        "classe": "pronome_relativo"
+      },
+      {
+        "texto": "nous",
+        "classe": "pronome_pessoal"
+      },
+      {
+        "texto": "ont",
+        "classe": "verbo_auxiliar"
+      },
+      {
+        "texto": "fait",
+        "classe": "verbo_passado"
+      }
     ]
   },
   "6": {
     "inicio": "00:00:18,600",
     "fim": "00:00:22,179",
-    "texto_original": "Comme nous pardonnons à ceux qui nous ont offensés.",
+    "texto_original": "Du tort. offensé. Et ne nous soumets pas à la tentation.",
     "palavras": [
-      {"texto": "Comme", "classe": "conjuncao"},
-      {"texto": "nous", "classe": "pronome_pessoal"},
-      {"texto": "pardonnons", "classe": "verbo_presente"},
-      {"texto": "à", "classe": "preposicao"},
-      {"texto": "ceux", "classe": "pronome_demonstrativo"},
-      {"texto": "qui", "classe": "pronome_relativo"},
-      {"texto": "nous", "classe": "pronome_pessoal"},
-      {"texto": "ont", "classe": "verbo_presente"},
-      {"texto": "offensés", "classe": "adjetivo_normal"},
-      {"texto": ".", "classe": "pontuacao"}
+      {
+        "texto": "Du",
+        "classe": "preposicao"
+      },
+      {
+        "texto": "tort",
+        "classe": "substantivo_masculino_singular"
+      },
+      {
+        "texto": "offensé",
+        "classe": "adjetivo_normal"
+      },
+      {
+        "texto": "Et",
+        "classe": "conjuncao"
+      },
+      {
+        "texto": "ne",
+        "classe": "advérbio_normal"
+      },
+      {
+        "texto": "nous",
+        "classe": "pronome_objeto"
+      },
+      {
+        "texto": "soumets",
+        "classe": "verbo_presente"
+      },
+      {
+        "texto": "pas",
+        "classe": "advérbio_normal"
+      },
+      {
+        "texto": "à",
+        "classe": "preposicao"
+      },
+      {
+        "texto": "la",
+        "classe": "artigo_definido"
+      },
+      {
+        "texto": "tentation",
+        "classe": "substantivo_feminino_singular"
+      }
     ]
   },
   "7": {
     "inicio": "00:00:22,180",
     "fim": "00:00:26,700",
-    "texto_original": "Et ne nous laissez pas entrer en tentation, mais délivrez-nous du mal. Amen.",
+    "texto_original": "Mais délivre-nous du mal. Amen.",
     "palavras": [
-      {"texto": "Et", "classe": "conjuncao"},
-      {"texto": "ne", "classe": "advérbio_normal"},
-      {"texto": "nous", "classe": "pronome_pessoal"},
-      {"texto": "laissez", "classe": "verbo_imperativo"},
-      {"texto": "pas", "classe": "advérbio_normal"},
-      {"texto": "entrer", "classe": "verbo_presente"},
-      {"texto": "en", "classe": "preposicao"},
-      {"texto": "tentation", "classe": "substantivo_feminino_singular"},
-      {"texto": ",", "classe": "pontuacao"},
-      {"texto": "mais", "classe": "conjuncao"},
-      {"texto": "délivrez", "classe": "verbo_imperativo"},
-      {"texto": "-", "classe": "pontuacao"},
-      {"texto": "nous", "classe": "pronome_pessoal"},
-      {"texto": "du", "classe": "preposicao"},
-      {"texto": "mal", "classe": "substantivo_masculino_singular"},
-      {"texto": ".", "classe": "pontuacao"},
-      {"texto": "Amen", "classe": "interjeicao"}
+      {
+        "texto": "Mais",
+        "classe": "conjuncao"
+      },
+      {
+        "texto": "délivre",
+        "classe": "verbo_imperativo"
+      },
+      {
+        "texto": "nous",
+        "classe": "pronome_objeto"
+      },
+      {
+        "texto": "du",
+        "classe": "preposicao"
+      },
+      {
+        "texto": "mal",
+        "classe": "substantivo_masculino_singular"
+      },
+      {
+        "texto": "Amen",
+        "classe": "interjeicao"
+      }
     ]
   }
 }

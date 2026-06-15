@@ -250,6 +250,14 @@ class Classifier:
         except Exception as exc:
             logger.warning("   ⚠️  Backup Drive falhou: %s", exc)
 
+        # Backup adicional na pasta de cache de assets do Drive
+        try:
+            self._cfg.pasta_assets_cache.mkdir(parents=True, exist_ok=True)
+            shutil.copy(caminho_local, self._cfg.pasta_assets_cache / self._nome_json(lang))
+            logger.info("   ☁️  Cache: assets/cache/%s", self._nome_json(lang))
+        except Exception as exc:
+            logger.warning("   ⚠️  Backup em assets/cache falhou: %s", exc)
+
         self._cache[lang] = dados
         return caminho_local
 

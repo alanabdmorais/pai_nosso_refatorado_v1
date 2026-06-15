@@ -39,6 +39,7 @@ from ffmpeg_utils import (
     concatenar_videos,
     cortar_video,
     gerar_ass,
+    obter_duracao,
     queimar_legendas_ass,
 )
 from groq_client import GroqClient
@@ -214,9 +215,55 @@ class VideoPipeline:
         thread.join()
 
         logger.info("✅ Áudio: %s (%.2f MB)", audio_path.name, audio_path.stat().st_size / 1_048_576)
-        self._drive.upload(audio_path, self._cfg.ID_PASTA_AUDIO, "audio/wav")
+        self._drive.upload(audio_path, self._cfg.pasta_assets_audio, "audio/wav")
         self._cp.salvar("audio_gerado", {"arquivo": str(audio_path)})
         return audio_path
+
+    # ── Atalho: vídeo base ANTES de existirem legendas do YouTube ─────────────
+
+    def gerar_video_base(self) -> Path:
+        """
+        Gera o vídeo base (clipes + crédito/logo + narração + trilha) sem
+        depender das legendas do YouTube (Fases 3/4/5/8) — útil porque o
+        YouTube só gera as legendas DEPOIS que esse vídeo base é publicado.
+
+        Executa, na ordem:
+          - Fase 1 (áudio), se ainda não feita
+          - Fase 6 (clipes), usando a duração do áudio em vez de legendas_pt
+          - Fase 7 (vídeo base), com download oferecido ao final
+
+        Pode ser chamado a qualquer momento; depois de publicar o vídeo e
+        baixar as legendas do YouTube, rode pipeline.run() normalmente —
+        as fases 1, 6 e 7 serão puladas pelo checkpoint.
+        """
+        logger.info(_SEP)
+        logger.info("▶  GERAR VÍDEO BASE (sem legendas do YouTube) — %s", self._cfg.NOME_ORACAO.upper())
+        logger.info(_SEP)
+
+        if not self._cp.fase_concluida("audio_gerado"):
+            self.fase1_gerar_audio()
+        else:
+            logger.info("⏭️  Fase 1 (áudio) já concluída")
+
+        if not self._cp.fase_concluida("clipes_cortados"):
+            clipes = self.fase6_baixar_clipes()
+        else:
+            logger.info("⏭️  Fase 6 (clipes) já concluída")
+            clipes = self._clipes_do_checkpoint()
+
+        if not self._cp.fase_concluida("video_base_criado"):
+            video_base = self.fase7_criar_video_base(clipes)
+        else:
+            logger.info("⏭️  Fase 7 (vídeo base) já concluída")
+            video_base = Path(self._cfg.NOME_VIDEO_BASE)
+
+        logger.info(_SEP)
+        logger.info("🎉 VÍDEO BASE PRONTO: %s", video_base)
+        logger.info("   Publique este vídeo no YouTube. Depois que o YouTube")
+        logger.info("   gerar as legendas automáticas, baixe-as e rode pipeline.run()")
+        logger.info("   normalmente — as fases já feitas serão puladas.")
+        logger.info(_SEP)
+        return video_base
 
     # ── Fase 2 (MANTIDA APENAS PARA REFERÊNCIA, NÃO É MAIS USADA) ─────────────
 
@@ -227,7 +274,7 @@ class VideoPipeline:
         logger.info("── Fase 2: Transcrevendo com Whisper (NÃO USADO - YouTube é preferido)")
         audio_path = Path(self._cfg.NOME_AUDIO)
         if not audio_path.exists():
-            self._drive.download(self._cfg.ID_PASTA_AUDIO, self._cfg.NOME_AUDIO, audio_path)
+            self._drive.download(self._cfg.pasta_assets_audio, self._cfg.NOME_AUDIO, audio_path)
 
         model     = whisper.load_model("base")
         resultado = model.transcribe(str(audio_path), language="pt", word_timestamps=True)
@@ -294,7 +341,7 @@ class VideoPipeline:
 
         srt_pt = Path(self._cfg.NOME_SRT_PT)
         salvar_srt(legendas, srt_pt)
-        self._drive.upload(srt_pt, self._cfg.ID_PASTA_LEGENDAS, "text/plain")
+        self._drive.upload(srt_pt, self._cfg.pasta_assets_legendas, "text/plain")
         logger.info("✅ SRT PT salvo: %s (%d legendas) [%s]", srt_pt.name, len(legendas), fonte)
         self._cp.salvar("srt_pt_corrigido", {"legendas": len(legendas), "fonte": fonte})
         return legendas
@@ -421,7 +468,7 @@ class VideoPipeline:
             legendas_idiomas[lang] = legendas_lang
             srt_out = Path(self._cfg.nome_srt(lang))
             salvar_srt(legendas_lang, srt_out)
-            self._drive.upload(srt_out, self._cfg.ID_PASTA_LEGENDAS, "text/plain")
+            self._drive.upload(srt_out, self._cfg.pasta_assets_legendas, "text/plain")
             logger.info("   ✅ %s: %d legendas [%s]", lang.upper(), len(legendas_lang), fonte)
 
         self._cp.salvar("srt_traduzidos", {"idiomas": list(legendas_idiomas.keys())})
@@ -565,11 +612,30 @@ class VideoPipeline:
 
     # ── Fase 6 ────────────────────────────────────────────────────────────────
 
-    def fase6_baixar_clipes(self, legendas_pt: list[Legenda]) -> list[Clipe]:
-        """Baixa clipes da planilha Google Sheets e corta para DURACAO_CLIPE segundos."""
+    def fase6_baixar_clipes(self, legendas_pt: Optional[list[Legenda]] = None) -> list[Clipe]:
+        """
+        Baixa clipes da planilha Google Sheets e corta para DURACAO_CLIPE segundos.
+
+        A duração total do vídeo é calculada a partir de `legendas_pt` (se
+        fornecido) ou, na ausência delas (ex: vídeo base gerado antes das
+        legendas do YouTube existirem), a partir da duração do áudio gerado
+        na Fase 1.
+        """
         logger.info("── Fase 6: Baixando e cortando clipes")
 
-        duracao_total = max(leg.fim_seg for leg in legendas_pt)
+        if legendas_pt:
+            duracao_total = max(leg.fim_seg for leg in legendas_pt)
+        else:
+            audio_path = Path(self._cfg.NOME_AUDIO)
+            self._drive.download_se_ausente(self._cfg.pasta_assets_audio, self._cfg.NOME_AUDIO, audio_path)
+            if not audio_path.exists():
+                raise PipelineError(
+                    "Não foi possível determinar a duração: nem legendas_pt "
+                    "nem o áudio gerado estão disponíveis."
+                )
+            duracao_total = obter_duracao(audio_path)
+            logger.info("   Duração obtida do áudio gerado (sem legendas_pt)")
+
         num_clipes    = max(1, int(duracao_total / self._cfg.DURACAO_CLIPE) + 1)
         logger.info("   Duração total: %.1fs → %d clipes necessários", duracao_total, num_clipes)
 
@@ -604,6 +670,14 @@ class VideoPipeline:
 
         if not processados:
             raise PipelineError("Nenhum clipe processado com sucesso")
+
+        # Backup dos clipes prontos na pasta de assets do Drive
+        try:
+            self._cfg.pasta_assets_clipes.mkdir(parents=True, exist_ok=True)
+            for clipe in processados:
+                self._drive.upload(Path(clipe.arquivo_pronto), self._cfg.pasta_assets_clipes, "video/mp4")
+        except Exception as exc:
+            logger.warning("   ⚠️  Backup de clipes no Drive falhou: %s", exc)
 
         self._cp.salvar("clipes_cortados", {
             "total": len(processados),
@@ -648,7 +722,7 @@ class VideoPipeline:
         logger.info("── Fase 7: Criando vídeo base")
 
         logo_path = Path("logo_baixada.png")
-        self._drive.download_se_ausente(self._cfg.ID_PASTA_LOGO, self._cfg.NOME_ARQUIVO_LOGO, logo_path)
+        self._drive.download_se_ausente(self._cfg.pasta_assets_marca, self._cfg.NOME_ARQUIVO_LOGO, logo_path)
         if not logo_path.exists():
             logo_path = None  # type: ignore
 
@@ -664,25 +738,93 @@ class VideoPipeline:
         concatenar_videos(arquivos_prontos, video_sem_audio)
 
         audio_path = Path(self._cfg.NOME_AUDIO)
-        self._drive.download_se_ausente(self._cfg.ID_PASTA_AUDIO, self._cfg.NOME_AUDIO, audio_path)
+        self._drive.download_se_ausente(self._cfg.pasta_assets_audio, self._cfg.NOME_AUDIO, audio_path)
         video_com_audio = Path("video_com_audio.mp4")
         adicionar_audio(video_sem_audio, audio_path, video_com_audio)
         video_sem_audio.unlink(missing_ok=True)
 
-        musica_path = Path(self._cfg.NOME_ARQUIVO_MUSICA)
-        self._drive.download_se_ausente(self._cfg.ID_PASTA_MUSICA, self._cfg.NOME_ARQUIVO_MUSICA, musica_path)
+        musica_path = self._resolver_trilha_sonora()
         video_base = Path(self._cfg.NOME_VIDEO_BASE)
-        if musica_path.exists():
+        if musica_path and musica_path.exists():
             adicionar_trilha_fundo(video_com_audio, musica_path, video_base, self._cfg.VOLUME_MUSICA)
             video_com_audio.unlink(missing_ok=True)
         else:
             video_com_audio.rename(video_base)
             logger.warning("Trilha não encontrada — vídeo base sem música de fundo")
 
-        self._drive.upload(video_base, self._cfg.ID_PASTA_VIDEOS, "video/mp4")
+        self._drive.upload(video_base, self._cfg.pasta_assets_videos, "video/mp4")
         logger.info("✅ Vídeo base: %s (%.2f MB)", video_base.name, video_base.stat().st_size / 1_048_576)
         self._cp.salvar("video_base_criado", {"arquivo": str(video_base)})
+        self._oferecer_download(video_base, self._cfg.pasta_assets_videos)
         return video_base
+
+    # ── Resolução da trilha sonora ───────────────────────────────────────────
+
+    def _resolver_trilha_sonora(self) -> Optional[Path]:
+        """
+        Resolve o arquivo de trilha sonora em assets/trilha/.
+
+        Prioridade:
+          1. Arquivo com o nome configurado em cfg.NOME_ARQUIVO_MUSICA (se existir)
+          2. Único arquivo de áudio (.mp3/.wav/.m4a/.ogg) presente em assets/trilha/
+             — útil quando a trilha muda por oração e o nome não foi atualizado
+               em config.py.
+
+        Retorna o caminho local do arquivo baixado, ou None se não achar nada.
+        """
+        pasta_trilha = self._cfg.pasta_assets_trilha
+
+        # 1. Tenta o nome configurado
+        musica_path = Path(self._cfg.NOME_ARQUIVO_MUSICA)
+        if self._drive.download_se_ausente(pasta_trilha, self._cfg.NOME_ARQUIVO_MUSICA, musica_path):
+            if musica_path.exists():
+                return musica_path
+
+        # 2. Fallback: único arquivo de áudio na pasta trilha/ do Drive
+        EXTENSOES_AUDIO = {".mp3", ".wav", ".m4a", ".ogg"}
+        try:
+            candidatos = [
+                f for f in self._drive.listar_pasta(pasta_trilha)
+                if Path(f["name"]).suffix.lower() in EXTENSOES_AUDIO
+            ]
+        except Exception as exc:
+            logger.debug("Não foi possível listar %s: %s", pasta_trilha, exc)
+            candidatos = []
+
+        if len(candidatos) == 1:
+            nome = candidatos[0]["name"]
+            logger.info(
+                "   🎵 Trilha '%s' não encontrada — usando '%s' (único arquivo em assets/trilha/)",
+                self._cfg.NOME_ARQUIVO_MUSICA, nome,
+            )
+            destino = Path(nome)
+            if self._drive.download(pasta_trilha, nome, destino):
+                return destino
+        elif len(candidatos) > 1:
+            logger.warning(
+                "   ⚠️  assets/trilha/ tem %d arquivos de áudio e nenhum corresponde a "
+                "NOME_ARQUIVO_MUSICA ('%s') — ajuste config.py ou deixe só 1 arquivo na pasta.",
+                len(candidatos), self._cfg.NOME_ARQUIVO_MUSICA,
+            )
+
+        return None
+
+    # ── Download de assets ───────────────────────────────────────────────────
+
+    @staticmethod
+    def _oferecer_download(arquivo: Path, pasta_drive: Path) -> None:
+        """
+        Oferece o arquivo para download direto pelo navegador (Colab)
+        e mostra o caminho onde ele foi salvo no Drive.
+        """
+        print(f"💾 Salvo no Drive: {pasta_drive / arquivo.name}")
+        try:
+            from google.colab import files
+            print(f"⬇️  Iniciando download de {arquivo.name}...")
+            files.download(str(arquivo))
+        except Exception as exc:
+            logger.debug("Download automático não disponível: %s", exc)
+            print(f"   (download automático indisponível — baixe manualmente em: {pasta_drive / arquivo.name})")
 
     # ── Fase 8 ────────────────────────────────────────────────────────────────
 
@@ -709,7 +851,7 @@ class VideoPipeline:
         queimar_legendas_ass(video_base, ass_path, video_final)
         logger.info("✅ Vídeo final: %s (%.2f MB)", video_final.name, video_final.stat().st_size / 1_048_576)
 
-        self._drive.upload(video_final, self._cfg.ID_PASTA_VIDEOS, "video/mp4")
+        self._drive.upload(video_final, self._cfg.pasta_assets_videos, "video/mp4")
         self._cp.salvar("legendas_queimadas", {"arquivo": str(video_final)})
         return video_final
 
@@ -739,7 +881,7 @@ class VideoPipeline:
             # Tenta baixar do Drive de IDs se não existir localmente
             json_local = Path(self._clf._nome_json(lang))
             if not json_local.exists() and not self._clf.existe_corrigido(lang):
-                self._drive.download(self._cfg.ID_PASTA_CLASSIFICACAO, self._clf._nome_json(lang), json_local)
+                self._drive.download(self._cfg.pasta_assets_cache, self._clf._nome_json(lang), json_local)
             self._clf.carregar_para_legendas(legendas, lang)
         return legendas_idiomas
 

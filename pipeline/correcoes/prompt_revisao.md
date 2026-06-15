@@ -1,5 +1,5 @@
 # Prompt de Revisão — Classificações Morfológicas
-**Projeto:** `pai_nosso`  |  **Data:** 2026-06-14 22:01
+**Projeto:** `pai_nosso`  |  **Data:** 2026-06-14 19:58
 
 ---
 

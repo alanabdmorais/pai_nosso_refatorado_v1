@@ -1,56 +1,127 @@
-// classificacao_pai_nosso_es.json (CORRIGIDO)
 {
   "1": {
     "inicio": "00:00:00,000",
     "fim": "00:00:05,539",
     "texto_original": "Padre nuestro que estás en los cielos, santificado sea tu nombre.",
     "palavras": [
-      {"texto": "Padre", "classe": "substantivo_masculino_singular"},
-      {"texto": "nuestro", "classe": "pronome_possessivo_singular"},
-      {"texto": "que", "classe": "pronome_relativo"},
-      {"texto": "estás", "classe": "verbo_presente"},
-      {"texto": "en", "classe": "preposicao"},
-      {"texto": "los", "classe": "artigo_definido"},
-      {"texto": "cielos", "classe": "substantivo_masculino_plural"},
-      {"texto": ",", "classe": "pontuacao"},
-      {"texto": "santificado", "classe": "adjetivo_normal"},
-      {"texto": "sea", "classe": "verbo_presente"},
-      {"texto": "tu", "classe": "pronome_possessivo_singular"},
-      {"texto": "nombre", "classe": "substantivo_masculino_singular"},
-      {"texto": ".", "classe": "pontuacao"}
+      {
+        "texto": "Padre",
+        "classe": "substantivo_masculino_singular"
+      },
+      {
+        "texto": "nuestro",
+        "classe": "pronome_possessivo_singular"
+      },
+      {
+        "texto": "que",
+        "classe": "pronome_relativo"
+      },
+      {
+        "texto": "estás",
+        "classe": "verbo_presente"
+      },
+      {
+        "texto": "en",
+        "classe": "preposicao"
+      },
+      {
+        "texto": "los",
+        "classe": "artigo_definido"
+      },
+      {
+        "texto": "cielos",
+        "classe": "substantivo_masculino_plural"
+      },
+      {
+        "texto": "santificado",
+        "classe": "verbo_presente"
+      },
+      {
+        "texto": "sea",
+        "classe": "verbo_presente"
+      },
+      {
+        "texto": "tu",
+        "classe": "pronome_possessivo_singular"
+      },
+      {
+        "texto": "nombre",
+        "classe": "substantivo_masculino_singular"
+      }
     ]
   },
   "2": {
     "inicio": "00:00:05,540",
     "fim": "00:00:07,799",
-    "texto_original": "Venha a nosotros tu reino.",
+    "texto_original": "Ven sea tu reino, hágase tu voluntad.",
     "palavras": [
-      {"texto": "Venha", "classe": "verbo_imperativo"},
-      {"texto": "a", "classe": "preposicao"},
-      {"texto": "nosotros", "classe": "pronome_pessoal"},
-      {"texto": "tu", "classe": "pronome_possessivo_singular"},
-      {"texto": "reino", "classe": "substantivo_masculino_singular"},
-      {"texto": ".", "classe": "pontuacao"}
+      {
+        "texto": "Ven",
+        "classe": "verbo_imperativo"
+      },
+      {
+        "texto": "sea",
+        "classe": "verbo_subjuntivo"
+      },
+      {
+        "texto": "tu",
+        "classe": "pronome_possessivo_singular"
+      },
+      {
+        "texto": "reino",
+        "classe": "substantivo_masculino_singular"
+      },
+      {
+        "texto": "hágase",
+        "classe": "verbo_imperativo"
+      },
+      {
+        "texto": "tu",
+        "classe": "pronome_possessivo_singular"
+      },
+      {
+        "texto": "voluntad",
+        "classe": "substantivo_feminino_singular"
+      }
     ]
   },
   "3": {
     "inicio": "00:00:07,800",
     "fim": "00:00:12,939",
-    "texto_original": "Hágase tu voluntad, así en la tierra como en el cielo.",
+    "texto_original": "Así en la tierra como en el cielo.",
     "palavras": [
-      {"texto": "Hágase", "classe": "verbo_imperativo"},
-      {"texto": "tu", "classe": "pronome_possessivo_singular"},
-      {"texto": "voluntad", "classe": "substantivo_feminino_singular"},
-      {"texto": ",", "classe": "pontuacao"},
-      {"texto": "así", "classe": "advérbio_normal"},
-      {"texto": "en", "classe": "preposicao"},
-      {"texto": "la", "classe": "artigo_definido"},
-      {"texto": "tierra", "classe": "substantivo_feminino_singular"},
-      {"texto": "como", "classe": "conjuncao"},
-      {"texto": "en", "classe": "preposicao"},
-      {"texto": "el", "classe": "artigo_definido"},
-      {"texto": "cielo", "classe": "substantivo_masculino_singular"},
-      {"texto": ".", "classe": "pontuacao"}
+      {
+        "texto": "Así",
+        "classe": "advérbio_normal"
+      },
+      {
+        "texto": "en",
+        "classe": "preposicao"
+      },
+      {
+        "texto": "la",
+        "classe": "artigo_definido"
+      },
+      {
+        "texto": "tierra",
+        "classe": "substantivo_feminino_singular"
+      },
+      {
+        "texto": "como",
+        "classe": "conjuncao"
+      },
+      {
+        "texto": "en",
+        "classe": "preposicao"
+      },
+      {
+        "texto": "el",
+        "classe": "artigo_definido"
+      },
+      {
+        "texto": "cielo",
+        "classe": "substantivo_masculino_singular"
+      }
     ]
   },
   "4": {
@@ -58,61 +129,119 @@
     "fim": "00:00:15,979",
     "texto_original": "Nuestro pan de cada día dánoslo hoy.",
     "palavras": [
-      {"texto": "Nuestro", "classe": "pronome_possessivo_singular"},
-      {"texto": "pan", "classe": "substantivo_masculino_singular"},
-      {"texto": "de", "classe": "preposicao"},
-      {"texto": "cada", "classe": "adjetivo_normal"},
-      {"texto": "día", "classe": "substantivo_masculino_singular"},
-      {"texto": "dánoslo", "classe": "verbo_imperativo"},
-      {"texto": "hoy", "classe": "advérbio_normal"}
+      {
+        "texto": "Nuestro",
+        "classe": "pronome_possessivo_singular"
+      },
+      {
+        "texto": "pan",
+        "classe": "substantivo_masculino_singular"
+      },
+      {
+        "texto": "de",
+        "classe": "preposicao"
+      },
+      {
+        "texto": "cada",
+        "classe": "adjetivo_normal"
+      },
+      {
+        "texto": "día",
+        "classe": "substantivo_masculino_singular"
+      },
+      {
+        "texto": "dánoslo",
+        "classe": "verbo_imperativo"
+      },
+      {
+        "texto": "hoy",
+        "classe": "advérbio_normal"
+      }
     ]
   },
   "5": {
     "inicio": "00:00:15,980",
     "fim": "00:00:18,599",
-    "texto_original": "Perdona nuestras ofensas.",
+    "texto_original": "Perdona nuestras ofensas, así como.",
     "palavras": [
-      {"texto": "Perdona", "classe": "verbo_imperativo"},
-      {"texto": "nuestras", "classe": "pronome_possessivo_plural"},
-      {"texto": "ofensas", "classe": "substantivo_feminino_plural"},
-      {"texto": ".", "classe": "pontuacao"}
+      {
+        "texto": "Perdona",
+        "classe": "verbo_imperativo"
+      },
+      {
+        "texto": "nuestras",
+        "classe": "pronome_possessivo_plural"
+      },
+      {
+        "texto": "ofensas",
+        "classe": "substantivo_feminino_plural"
+      },
+      {
+        "texto": "así",
+        "classe": "advérbio_normal"
+      },
+      {
+        "texto": "como",
+        "classe": "conjuncao"
+      }
     ]
   },
   "6": {
     "inicio": "00:00:18,600",
     "fim": "00:00:22,179",
-    "texto_original": "Así como perdonamos a quienes nos han ofendido.",
+    "texto_original": "No nos dejes caer en tentación, sino.",
     "palavras": [
-      {"texto": "Así", "classe": "advérbio_normal"},
-      {"texto": "como", "classe": "conjuncao"},
-      {"texto": "perdonamos", "classe": "verbo_presente"},
-      {"texto": "a", "classe": "preposicao"},
-      {"texto": "quienes", "classe": "pronome_relativo"},
-      {"texto": "nos", "classe": "pronome_pessoal"},
-      {"texto": "han", "classe": "verbo_presente"},
-      {"texto": "ofendido", "classe": "adjetivo_normal"},
-      {"texto": ".", "classe": "pontuacao"}
+      {
+        "texto": "No",
+        "classe": "advérbio_normal"
+      },
+      {
+        "texto": "nos",
+        "classe": "pronome_pessoal"
+      },
+      {
+        "texto": "dejes",
+        "classe": "verbo_imperativo"
+      },
+      {
+        "texto": "caer",
+        "classe": "verbo_presente"
+      },
+      {
+        "texto": "en",
+        "classe": "preposicao"
+      },
+      {
+        "texto": "tentación",
+        "classe": "substantivo_feminino_singular"
+      },
+      {
+        "texto": "sino",
+        "classe": "conjuncao"
+      }
     ]
   },
   "7": {
     "inicio": "00:00:22,180",
     "fim": "00:00:26,700",
-    "texto_original": "Y no nos dejes caer en tentación, sino líbranos del mal. Amén.",
+    "texto_original": "Líbranos del mal. Amén.",
     "palavras": [
-      {"texto": "Y", "classe": "conjuncao"},
-      {"texto": "no", "classe": "advérbio_normal"},
-      {"texto": "nos", "classe": "pronome_pessoal"},
-      {"texto": "dejes", "classe": "verbo_presente"},
-      {"texto": "caer", "classe": "verbo_presente"},
-      {"texto": "en", "classe": "preposicao"},
-      {"texto": "tentación", "classe": "substantivo_feminino_singular"},
-      {"texto": ",", "classe": "pontuacao"},
-      {"texto": "sino", "classe": "conjuncao"},
-      {"texto": "líbranos", "classe": "verbo_imperativo"},
-      {"texto": "del", "classe": "preposicao"},
-      {"texto": "mal", "classe": "substantivo_masculino_singular"},
-      {"texto": ".", "classe": "pontuacao"},
-      {"texto": "Amén", "classe": "interjeicao"}
+      {
+        "texto": "Líbranos",
+        "classe": "verbo_imperativo"
+      },
+      {
+        "texto": "del",
+        "classe": "preposicao"
+      },
+      {
+        "texto": "mal",
+        "classe": "substantivo_masculino_singular"
+      },
+      {
+        "texto": "Amén",
+        "classe": "interjeicao"
+      }
     ]
   }
 }
